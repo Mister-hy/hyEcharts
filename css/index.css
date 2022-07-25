@@ -35,6 +35,7 @@ header .showTime {
 }
 .mainBox .column {
   flex: 3;
+  /* 约束屏幕尺寸 */
 }
 .mainBox .column .panel {
   position: relative;
@@ -160,63 +161,76 @@ header .showTime {
   padding-top: 0.125rem;
   font-size: 14px;
 }
-.mainBox .column .mid-map {
-  height: 10.125rem;
+.mainBox .column .map {
   position: relative;
-}
-.mainBox .column .mid-map .chart {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 5;
   height: 10.125rem;
-  width: 100%;
 }
-.mainBox .column .map1,
-.mainBox .column .map2,
-.mainBox .column .map3 {
+.mainBox .column .map .map1 {
+  width: 6.475rem;
+  height: 6.475rem;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 6.475rem;
-  height: 6.475rem;
   transform: translate(-50%, -50%);
-  background: url(../images/map.png) no-repeat;
+  background: url(../images/map.png);
   background-size: 100% 100%;
   opacity: 0.3;
 }
-.mainBox .column .map2 {
+.mainBox .column .map .map2 {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 8.0375rem;
   height: 8.0375rem;
-  z-index: 2;
+  background: url(../images/lbx.png);
+  animation: rotate1 15s linear infinite;
   opacity: 0.6;
-  background: url(../images/jt.png) no-repeat;
   background-size: 100% 100%;
-  animation: rotate 15s linear infinite;
 }
-.mainBox .column .map3 {
+.mainBox .column .map .map3 {
   position: absolute;
-  width: 8.0375rem;
-  height: 8.0375rem;
-  background: url(../images/lbx.png) no-repeat;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 7.075rem;
+  height: 7.075rem;
+  background: url(../images/jt.png);
+  animation: rotate2 10s linear infinite;
+  opacity: 0.6;
   background-size: 100% 100%;
-  animation: rotate1 10s linear infinite;
 }
-@keyframes rotate {
-  from {
+.mainBox .column .map .chart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10.125rem;
+}
+@keyframes rotate1 {
+  form {
     transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
     transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-@keyframes rotate1 {
-  from {
+@keyframes rotate2 {
+  form {
     transform: translate(-50%, -50%) rotate(0deg);
   }
   to {
     transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .mainBox .column html {
+    font-size: 42px !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .mainBox .column html {
+    font-size: 80px !important;
   }
 }
 .mainBox :nth-child(2) {

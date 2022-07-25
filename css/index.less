@@ -172,65 +172,80 @@ header{
     }
     }
     //地图模块
-    .mid-map{
-      height: 10.125rem;
+    .map {
       position: relative;
-      .chart{
+      height: 10.125rem;
+    }
+    .map .map1 {
+      width: 6.475rem;
+      height: 6.475rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url(../images/map.png);
+      background-size: 100% 100%;
+      opacity: 0.3;
+    }
+    .map .map2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 8.0375rem;
+      height: 8.0375rem;
+      background: url(../images/lbx.png);
+      animation: rotate1 15s linear infinite;
+      opacity: 0.6;
+      background-size: 100% 100%;
+    }
+    .map .map3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 7.075rem;
+      height: 7.075rem;
+      background: url(../images/jt.png);
+      animation: rotate2 10s linear infinite;
+      opacity: 0.6;
+      background-size: 100% 100%;
+    }
+    .map .chart {
       position: absolute;
       top: 0;
       left: 0;
-      z-index: 5;
-      height: 10.125rem;
       width: 100%;
-      }
-    }
-    .map1,
-    .map2,
-    .map3 {
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     width: 6.475rem;
-     height: 6.475rem;
-     transform: translate(-50%,-50%);
-     background: url(../images/map.png) no-repeat;
-     background-size: 100% 100%;
-     opacity: 0.3;
-    }
-    .map2{
-      position: absolute;
-      width: 8.0375rem;
-      height: 8.0375rem;
-      z-index: 2;
-      opacity: 0.6;
-      background: url(../images/jt.png) no-repeat;
-      background-size: 100% 100%;
-      animation: rotate 15s linear infinite;
-    }
-    .map3{
-      position: absolute;
-      width: 8.0375rem;
-      height: 8.0375rem;
-      background: url(../images/lbx.png) no-repeat;
-      background-size: 100% 100%;
-      animation: rotate1 10s linear infinite;
-    }
-    @keyframes  rotate {
-       from{
-         transform: translate(-50%,-50%) rotate(0deg);
-       }
-       to{
-         transform: translate(-50%,-50%) rotate(360deg);
-       }
+      height: 10.125rem;
     }
     @keyframes rotate1 {
-      from{
-        transform: translate(-50%,-50%) rotate(0deg);
+      form {
+        transform: translate(-50%, -50%) rotate(0deg);
       }
-      to{
-        transform: translate(-50%,-50%) rotate(-360deg);
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
       }
     }
+    @keyframes rotate2 {
+      form {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+      }
+    }
+    /* 约束屏幕尺寸 */
+    @media screen and (max-width: 1024px) {
+      html {
+        font-size: 42px !important;
+      }
+    }
+    @media screen and (min-width: 1920px) {
+      html {
+        font-size: 80px !important;
+      }
+    }
+    
   }
   & :nth-child(2){
     flex: 5;
