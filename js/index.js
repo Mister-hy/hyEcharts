@@ -344,7 +344,7 @@
         color: "rgba(255,255,255,.5)",
         fontSize: "12",
       },
-      data: ["邮件营销", "联盟广告", "Video Ads", "Direct", "Search Engine"],
+      data: ["邮件营销", "联盟广告"],
     },
     toolbox: {},
     grid: {
@@ -541,6 +541,69 @@
   // 3. 把配置给实例对象
   myChart.setOption(option);
   // 4.让图表跟随屏幕自动去适应
+  window.addEventListener("resize", function () {
+    myChart.resize();
+  });
+})();
+// 饼形图 年龄分布模块制作
+(function () {
+  // 1.创建实例对象
+  var myChart = echarts.init(document.querySelector(".Three"));
+  // 2.指定配置对象和数据
+  option = {
+    tooltip: {
+      trigger: "item",
+    },
+    legend: {
+      // 距离底部为0%
+      bottom: "0%",
+      left: "center",
+      // 小图标的宽度和高度
+      itemWidth: 10,
+      itemHeight: 10,
+      data: ["直接访问", "邮件营销", "联盟广告", "视频广告", "搜索引擎"],
+      // 修改图例组件的文字为 12px
+      textStyle: {
+        color: "rgba(255,255,255,.5)",
+        fontSize: "12",
+      },
+      data: ["0岁以下", "20-29岁", "30-39岁", "40-49岁", "50岁以上"],
+    },
+    series: [
+      {
+        name: "年龄分布",
+        type: "pie",
+        // 设置饼形图在容器中的位置
+        center: ["50%", "50%"],
+        //  修改内圆半径和外圆半径为  百分比是相对于容器宽度来说的
+        radius: ["40%", "60%"],
+        // 不显示标签文字
+        label: { show: false },
+        // 不显示连接线
+        labelLine: { show: false },
+        // avoidLabelOverlap: false,
+        label: {
+          show: false,
+          position: "center",
+        },
+        emphasis: {},
+        labelLine: {
+          show: false,
+        },
+        data: [
+          { value: 1, name: "0岁以下" },
+          { value: 4, name: "20-29岁" },
+          { value: 2, name: "30-39岁" },
+          { value: 2, name: "40-49岁" },
+          { value: 1, name: "50岁以上" },
+        ],
+        color: ["#065aab", "#066eab", "#0682ab", "#0696ab", "#06a0ab"],
+      },
+    ],
+  };
+  // 3.将数据给配置对象
+  myChart.setOption(option);
+  // 4..让图表跟随屏幕自动去适应
   window.addEventListener("resize", function () {
     myChart.resize();
   });
